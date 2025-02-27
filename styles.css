@@ -1,0 +1,354 @@
+/* Resetare stiluri pentru a avea un punct de pornire uniform */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stiluri globale */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    background: #1e3c72; /* dark blue */
+    background-image: url(images/hero.webp);
+    background-attachment: fixed; /* Acesta va crea efectul parallax */
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 100vh; /* Să ocupe întreaga înălțime a ferestrei */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .cta-button {
+    background-color: #ff7f50; /* coral */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero .cta-button:hover {
+    background-color: #e06c3a;
+}
+
+/* Section pentru Servicii */
+#services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#services h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.service-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service {
+    background-color: #e6e6e6;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efect de mișcare la imagini din secțiunea Servicii sau Testimoniale */
+.service img, #testimonials img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Efectul de hover pe imagine (zoom) */
+.service:hover img, #testimonials:hover img {
+    transform: scale(1.1); /* Mărim imaginea puțin atunci când mouse-ul este deasupra */
+}
+
+/* Opțional, adăugăm o animație când secțiunea devine vizibilă */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service, #testimonials {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Efectul de hover pe elementele din servicii */
+.service:hover {
+    transform: translateY(-10px); /* Ridicăm elementul ușor pe verticală */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adăugăm o umbră ușoară */
+}
+
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+}
+
+/* Despre Noi */
+#about {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+}
+
+/* Testimoniale */
+#testimonials {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#testimonials p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Secțiunea de Contact */
+#contact {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #1e3c72;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #335c92;
+}
+
+/* Media Queries pentru responsive design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-list {
+        flex-direction: column;
+    }
+
+    .service {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .hero {
+        padding: 80px 20px; /* Ajustează padding-ul pe ecrane mici */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* Ajustează fontul pe ecrane mici */
+    }
+
+    .hero .cta-button {
+        font-size: 1.2rem; /* Ajustează butonul pentru ecrane mici */
+    }
+}
+
+/* Stiluri pentru secțiunea Media */
+#media {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#media h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.media-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.media-item {
+    width: 30%;
+    margin: 10px;
+}
+
+.media-item img, .media-item video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Media Queries pentru responsive design */
+@media (max-width: 768px) {
+    .media-item {
+        width: 80%;
+        margin: 20px 0;
+    }
+}
+
+
+/* Stiluri pentru Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+    margin: 20px 0;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin: 10px 0;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Media Queries pentru responsive design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        text-align: center;
+    }
+}
